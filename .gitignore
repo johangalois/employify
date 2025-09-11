@@ -1,0 +1,50 @@
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# VS Code / PyCharm / Editors
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Databases & data
+*.db
+*.sqlite3
+data/
+backup/
+
+# Environment & secrets
+.env
+.env.local
+*.env
+.streamlit/secrets.toml
+
+# Logs
+*.log
+
+# Coverage / testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
