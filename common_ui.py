@@ -113,3 +113,26 @@ def footer(left_text: str, links: Optional[Dict[str, str]] = None) -> None:
             parts.append(f"<a href='{url}' target='_blank' rel='noopener noreferrer'>{name}</a>")
     link_html = (" " + "".join(parts)) if parts else ""
     st.markdown(f"<div class='app-footer'><span>{left_text}</span>{link_html}</div>", unsafe_allow_html=True)
+        
+def nav_pages():
+  """ Container of navigation pages"""
+  
+  pages = {
+      "Home": [
+          st.Page("pages/home.py", title = "Home")
+          ],
+      "Employee Management 🪪": 
+        [
+          st.Page('pages/Registration.py', title= 'Register New Employee 🆕'),
+          st.Page('pages/update_info.py', title= 'Update Employee 🔄️'),
+          st.Page('pages/promotions.py', title= 'Promote Employee 🔃'),
+          st.Page('pages/transfers.py', title= 'Transfer Employee'),
+          st.Page('pages/deactivations.py', title= 'Deactivate Employee ⏬')
+      ],
+      "Headcount":
+        [
+          
+        ]
+      }
+  
+  return st.navigation(pages, position='sidebar', expanded= False)

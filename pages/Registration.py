@@ -9,9 +9,10 @@ from src.registration import (
     validate_required,
 )
 
-st.title("Employee Registration · Phase 2")
+st.title("Employee Registration")
 
-@st.dialog("Sign Up")
+
+@st.dialog("Registration")
 def open_registration_dialog(dept: str):
     st.write(f"**Department:** {dept}")
 
@@ -34,12 +35,13 @@ def open_registration_dialog(dept: str):
         st.rerun()
 
 # --- Page body ---
-dept = st.selectbox("Department", DEPARTMENTS, index=None, placeholder="Choose a department…")
+with st.container():
+    dept = st.selectbox("Department", DEPARTMENTS, index=None, placeholder="Choose a department…")
 
-if dept and st.button("Open registration"):
-    open_registration_dialog(dept)
+    if dept and st.button("Open registration"):
+        open_registration_dialog(dept)
 
-if st.session_state.get("employee_registration_data"):
-    st.divider()
-    st.subheader("Last registration (session)")
-    st.json(st.session_state["employee_registration_data"])
+    if st.session_state.get("employee_registration_data"):
+        st.divider()
+        st.subheader("Last registration (session)")
+        st.json(st.session_state["employee_registration_data"])

@@ -1,6 +1,8 @@
 import streamlit as st
 from datetime import date
 from src.preloaded import (DEPARTMENTS, ROLES)
+from common_ui import (nav_pages)
+
 
 def base_form_structure():
     
